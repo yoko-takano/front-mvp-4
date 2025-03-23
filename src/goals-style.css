@@ -1,0 +1,236 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffe4e1; /* Cor de fundo suave */
+  font-family: "Poppins", sans-serif;
+  overflow: hidden; /* Remove a barra de rolagem da página */
+  height: 100%; /* Garante que a altura seja 100% para evitar rolagem */
+}
+
+.goals-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  height: 100vh;
+  gap: 0; /* Remove o gap padrão entre as colunas */
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Left Column (Data Section + Form Section) */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 0px;  /* Padding específico da esquerda */
+  padding-right: 7.5px;  /* Padding específico da direita */
+  gap: 20px;
+}
+
+/* Right Column (Goals Display) */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 7.5px;  /* Padding específico da esquerda */
+  padding-right: 25px;  /* Padding específico da direita */
+  gap: 20px;
+}
+
+h2, h3 {
+  font-size: 20px;
+  color: #ff69b4;
+  font-weight: 600;
+}
+
+p {
+  color: #8a8a8a;
+  font-size: 16px;
+}
+
+/* Data Section */
+.data-section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px; /* Padding igual ao da form-section */
+  width: 100%;
+  max-width: 800px; /* Largura máxima, igual à da form-section */
+  margin: 0 auto; /* Centraliza na página */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+  color: #ff69b4;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* User Info Container */
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start; /* Garantir que os itens na coluna fiquem alinhados ao topo */
+  flex-wrap: wrap; /* Garantir que o layout seja responsivo */
+}
+
+/* Individual User Detail */
+.user-detail {
+  display: flex;
+  flex-direction: column; /* Mudando para coluna para que o título e valor fiquem empilhados */
+  align-items: left; /* Centralizando os itens na coluna */
+  padding: 12px;
+  border-radius: 12px;
+  background: #fdf2f7; /* Fundo suave e rosado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+  transition: background-color 0.3s ease;
+  flex: 1; /* Para garantir que os itens ocupem espaço igualmente */
+  text-align: left; /* Centraliza o texto e valores */
+}
+
+.user-detail:hover {
+  background: #ffe6f0; /* Alteração de cor ao passar o mouse */
+}
+
+/* Ajustando a disposição do ícone e do texto */
+.user-info-text {
+  display: flex;
+  align-items: center; /* Alinhando o ícone e o texto na mesma linha */
+}
+
+.user-info-text p {
+  margin: 0 0 5px 10px; /* Ajustando o espaçamento entre o ícone e o texto */
+}
+
+/* Ícones */
+.user-detail .user-icon,
+.user-detail .money-icon,
+.user-detail .savings-icon {
+  color: #ff69b4; /* Cor rosa para os ícones */
+  font-size: 20px;
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Textos de label e valor */
+.data-label {
+  font-weight: 600;
+  color: #8a8a8a;
+  font-size: 18px;
+}
+
+.data-value {
+  color: #ff69b4;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px; /* Pequeno espaçamento entre o label e o valor */
+  margin-bottom: 0; /* Garantir que o valor não tenha margem extra embaixo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .data-section {
+    padding: 15px;
+  }
+  .user-info {
+    flex-direction: column;
+  }
+  .user-detail {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user-info-text {
+    margin-left: 0;
+  }
+}
+
+/* Form Section */
+.form-section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px; /* Padding igual para ambas */
+  width: 100%;
+  max-width: 800px; /* Largura máxima, ajustável conforme necessário */
+  margin: 0 auto; /* Centraliza na página */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.form-section input,
+button {
+  width: 100%; /* Garante que o botão e os inputs tenham a mesma largura */
+  padding: 12px;
+  border: 2px solid #f1c6d6; /* Borda padrão */
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fdf2f7;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Foco nos inputs com borda rosa */
+.form-section input:focus {
+  outline: none; /* Remove o contorno padrão do navegador ao focar */
+  border-color: #ff1493; /* Borda rosa ao focar */
+}
+
+/* Estilo do botão */
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 60px; /* Espaço entre o formulário e o botão */
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 20, 147, 0.2);
+  background-color: var(--rosa-escuro);
+  color: white;
+}
+
+/* Ajuste do espaçamento entre os textos e inputs */
+.form-section p {
+  font-size: 16px;
+  margin-bottom: 5px; /* Espaço menor entre o texto e o input */
+  color: #8a8a8a;
+}
+
+/* Goals Display */
+.goals-display {
+  background: #fff;
+  border-radius: 15px;
+  padding-top: 40px;
+  padding-right: 15px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.goals-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.goal-card {
+  background-color: #fdf2f7;
+  border-radius: 15px;
+  padding: 20px;
+  width: 200px;
+  border: 2px solid #ffb6c1;
+}
+
+.goal-card h4 {
+  color: #ff69b4;
+  font-weight: 600;
+}
+
+.goal-card p {
+  color: #8a8a8a;
+}

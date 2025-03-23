@@ -1,0 +1,148 @@
+:root {
+  --cinza-medio: #8a8a8a;
+  --rosa-escuro: #ff1493;
+  --rosa-medio: #ff69b4;
+  --rosa-claro: #fdf2f7;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../public/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.login-box {
+  background: white;
+  padding: 50px;
+  border-radius: 25px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--rosa-medio);
+  font-weight: 600;
+}
+
+.highlighted-text {
+  color: var(--rosa-escuro); /* Rosa para a palavra cutecode */
+}
+
+.subheading {
+  color: var(--cinza-medio);
+  font-size: 16px;
+  margin-top: 5px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--rosa-medio); /* Rosa pastel suave */
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  background-color: var(--rosa-claro); /* Cor de fundo suave */
+}
+
+.input-field:focus {
+  border-color: var(--rosa-escuro); /* Rosa suave para o foco */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.login-button,
+.signup-button {
+  flex: 1;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  height: 48px; /* A altura foi ajustada para ficar igual aos campos de input */
+}
+
+.login-button {
+  background: var(--rosa-medio);
+  color: white;
+  border: none;
+}
+
+.signup-button {
+  background: white;
+  color: var(--rosa-medio);
+  border: 2px solid var(--rosa-medio);
+}
+
+.login-button:hover,
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 20, 147, 0.2);
+}
+
+.login-button:hover {
+  background-color: var(--rosa-escuro);
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: white;
+  color: var(--rosa-escuro);
+}
+
+.icon {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.register {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.register a {
+  color: var(--rosa-medio);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  cozy-login:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./public:/usr/share/nginx/html/public
+    restart: always

@@ -1,0 +1,46 @@
+{
+    "users": [
+    {
+        "username": "Naomi Takeda",
+        "salary": "10000",
+        "goals": [
+            {
+                "goal_currency": "BRL",
+                "goal_name": "Makeup",
+                "goal_value": 30,
+                "value_per_month": 30
+            },
+            {
+                "goal_currency": "BRL",
+                "goal_name": "New dress",
+                "goal_value": 500,
+                "value_per_month": 20
+            },
+            {
+                "goal_currency": "BRL",
+                "goal_name": "Trip to Japan",
+                "goal_value": 100000,
+                "value_per_month": 100
+            },
+            {
+                "goal_currency": "BRL",
+                "goal_name": "Makeup",
+                "goal_value": 30,
+                "value_per_month": 30
+            },
+            {
+                "goal_currency": "BRL",
+                "goal_name": "New dress",
+                "goal_value": 500,
+                "value_per_month": 20
+            },
+            {
+                "goal_currency": "BRL",
+                "goal_name": "Trip to Japan",
+                "goal_value": 100000,
+                "value_per_month": 100
+            }
+        ]
+    }
+    ]
+}
