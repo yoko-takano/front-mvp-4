@@ -3,6 +3,7 @@ import '../goals-style.css'; // Styles specific to the Goals screen
 import Snowfall from 'react-snowfall'; // Import the Snowfall component
 import { FaUserCircle } from "react-icons/fa";
 import { TbMoneybag, TbPigMoney } from "react-icons/tb";
+import { FiEdit } from "react-icons/fi";
 
 const Goals = () => {
   const [goalName, setGoalName] = useState('')
@@ -58,6 +59,7 @@ const Goals = () => {
             <div className="user-info-text">
               <FaUserCircle className="user-icon" />
               <p className="data-label">Username</p>
+              <FiEdit className="edit-icon"/>
             </div>
             <p className="data-value">{username}</p>
           </div>
@@ -65,6 +67,7 @@ const Goals = () => {
             <div className="user-info-text">
               <TbMoneybag className="money-icon" />
               <p className="data-label">Salary</p>
+              <FiEdit className="edit-icon"/>
             </div>
             <p className="data-value">R$ {salary}</p>
           </div>
@@ -119,10 +122,23 @@ const Goals = () => {
             {goals.map((goal, index) => (
               <div className="goal-card" key={index}>
                 <h4>{goal.goal_name}</h4>
-                <p>
-                  {goal.goal_currency} {goal.goal_value}
-                </p>
-                <p>{goal.value_per_month} per month</p>
+
+                {/* Goal value in original currency */}
+                <div className="goal-details">
+                  <p>{goal.goal_currency} Currency:  {goal.goal_value}</p>
+                  <FiEdit className="edit-icon"/>
+                </div>
+
+                {/* Goal value in BRL currency */}
+                <div className="goal-details">
+                  <p>BRL Currency: {goal.goal_value}</p>
+                </div>
+
+                {/* Adds the Snowfall component for a snowfall effect */}
+                <div className="goal-details">
+                  <p> R${goal.value_per_month}/month</p>
+                  <FiEdit className="edit-icon"/>
+                </div>
               </div>
             ))}
           </div>

@@ -102,13 +102,14 @@ h2 {
 }
 
 .user-info-text p {
-  margin: 0 0 5px 10px; /* Ajustando o espaçamento entre o ícone e o texto */
+  margin: 0 5px 5px 10px; /* Ajustando o espaçamento entre o ícone e o texto */
 }
 
 /* Ícones */
 .user-detail .user-icon,
 .user-detail .money-icon,
-.user-detail .savings-icon {
+.user-detail .savings-icon,
+.user-detail .edit-icon {
   color: #ff69b4; /* Cor rosa para os ícones */
   font-size: 20px;
   margin-right: 10px; /* Espaçamento entre o ícone e o texto */
@@ -221,9 +222,11 @@ button:hover {
 .goal-card {
   background-color: #fdf2f7;
   border-radius: 15px;
-  padding: 20px;
-  width: 200px;
+  padding: 15px; /* Diminui o padding para reduzir o espaço interno */
+  width: 220px;
   border: 2px solid #ffb6c1;
+  display: flex;
+  flex-direction: column; /* Garante que o título fica no topo e ícones com texto fiquem embaixo */
 }
 
 .goal-card h4 {
@@ -231,6 +234,17 @@ button:hover {
   font-weight: 600;
 }
 
-.goal-card p {
+.goal-details {
+  display: flex;
+  align-items: center; /* Alinha o ícone e o texto na mesma linha */
+  gap: 10px; /* Ajusta o espaçamento entre o ícone e o texto */
+}
+
+.goal-details p {
   color: #8a8a8a;
+}
+
+/* Ícones */
+.goal-card .edit-icon {
+  color: #ff69b4;
 }

@@ -64,34 +64,43 @@ const Login = () => {
       <Snowfall />
 
       <div className="login-box">
-        <h2>Welcome to <span className="highlighted-text">cutecode</span>!</h2>
-        <p className="subheading">Login in to your account to continue</p>
 
-        <div className="input-group">
-          <input
-            type="text"
-            placeholder="Username"
-            className="input-field"
-            onFocus={playAudio} // Reproduz o áudio quando o input de texto recebe o foco
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="input-field"
-            onFocus={playAudio} // Reproduz o áudio quando o input de senha recebe o foco
-          />
+        {/* Parte superior com imagem */}
+        <div className="login-box-top">
+          <img src="background.jpg" alt="Login Illustration" className="login-image" />
         </div>
 
-        <div className="button-group">
-          {/* Botão de Login com ícone de flor */}
-          <button className="login-button" onClick={handleLogin}>
-            <LuFlower className="icon" /> Login
-          </button>
+        {/* Parte inferior com título, inputs e botões */}
+        <div className="login-box-bottom">
+          <h2>Welcome to <span className="highlighted-text">cutecode</span>!</h2>
+          <p className="subheading">Login in to your account to continue</p>
 
-          {/* Botão de Registro com ícone de semente */}
-          <button className="signup-button">
-            <FaSeedling className="icon" /> Register
-          </button>
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Username"
+              className="input-field"
+              onFocus={playAudio} // Reproduz o áudio quando o input de texto recebe o foco
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="input-field"
+              onFocus={playAudio} // Reproduz o áudio quando o input de senha recebe o foco
+            />
+          </div>
+
+          <div className="button-group">
+            {/* Botão de Login com ícone de flor */}
+            <button className="login-button" onClick={handleLogin}>
+              <LuFlower className="icon" /> Login
+            </button>
+
+            {/* Botão de Registro com ícone de semente */}
+            <button className="signup-button">
+              <FaSeedling className="icon" /> Register
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -99,3 +108,5 @@ const Login = () => {
 };
 
 export default Login;
+
+
