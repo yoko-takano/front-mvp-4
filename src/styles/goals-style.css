@@ -102,13 +102,14 @@ h2 {
 }
 
 .user-info-text p {
-  margin: 0 0 5px 10px; /* Ajustando o espaçamento entre o ícone e o texto */
+  margin: 0 5px 5px 10px; /* Ajustando o espaçamento entre o ícone e o texto */
 }
 
 /* Ícones */
 .user-detail .user-icon,
 .user-detail .money-icon,
-.user-detail .savings-icon {
+.user-detail .savings-icon,
+.user-detail .edit-icon {
   color: #ff69b4; /* Cor rosa para os ícones */
   font-size: 20px;
   margin-right: 10px; /* Espaçamento entre o ícone e o texto */
@@ -174,6 +175,38 @@ button {
   border-color: #ff1493; /* Borda rosa ao focar */
 }
 
+/* Estilização do Select de Moeda */
+.form-section select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #f1c6d6; /* Borda com a mesma cor dos inputs */
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fdf2f7;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+  appearance: none; /* Remove a aparência padrão do select */
+  -webkit-appearance: none; /* Necessário para alguns navegadores como Safari */
+  -moz-appearance: none; /* Necessário para alguns navegadores Firefox */
+}
+
+/* Foco no select, igual aos inputs */
+.form-section select:focus {
+  outline: none;
+  border-color: #ff1493; /* Borda rosa ao focar */
+  background-color: #ffe6f7; /* Cor de fundo mais clara ao focar */
+}
+
+/* Estilizando a seta do select */
+.form-section select::after {
+  content: "▼"; /* Simula a seta para a moeda */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Impede que a seta interfira na seleção */
+  color: #ff69b4; /* Cor da seta rosa */
+}
+
 /* Estilo do botão */
 button {
   background-color: #ff69b4;
@@ -214,6 +247,9 @@ button:hover {
 .goals-cards {
   display: flex;
   flex-wrap: wrap;
+  max-height: 708px; 
+  overflow-y: auto;  
+  padding-right: 10px;
   gap: 20px;
   justify-content: flex-start;
 }
@@ -221,9 +257,11 @@ button:hover {
 .goal-card {
   background-color: #fdf2f7;
   border-radius: 15px;
-  padding: 20px;
-  width: 200px;
+  padding: 15px; /* Diminui o padding para reduzir o espaço interno */
+  width: 220px;
   border: 2px solid #ffb6c1;
+  display: flex;
+  flex-direction: column; /* Garante que o título fica no topo e ícones com texto fiquem embaixo */
 }
 
 .goal-card h4 {
@@ -231,6 +269,46 @@ button:hover {
   font-weight: 600;
 }
 
-.goal-card p {
+.goal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Deixa o nome da meta e a lixeira alinhados */
+  padding-bottom: 15px;
+}
+
+.goal-header h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #ff69b4; /* Cor rosa para manter a consistência */
+}
+
+.delete-icon {
+  color: #ff69b4; /* Ícone de lixeira rosa */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  font-size: 18px;
+}
+
+.delete-icon:hover {
+  color: #ff1493; /* Um rosa mais escuro ao passar o mouse */
+}
+
+.goal-details {
+  display: flex;
+  align-items: center; /* Alinha o ícone e o texto na mesma linha */
+  gap: 10px; /* Ajusta o espaçamento entre o ícone e o texto */
+}
+
+.goal-details p {
   color: #8a8a8a;
+  margin: 0; /* Remove a margem adicional entre os textos */
+  padding: 5px; /* Remove o padding adicional */
+}
+
+/* Ícones */
+.goal-card .edit-icon {
+  color: #ff69b4;
+}
+
+.goal-card:hover, .edit-icon:hover {
+  color: #ff1493; /* Um rosa mais escuro ao passar o mouse */
 }

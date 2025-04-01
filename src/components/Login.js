@@ -3,17 +3,35 @@ import { FaSeedling } from "react-icons/fa6"; // Ícone de semente para registro
 import { LuFlower } from "react-icons/lu"; // Ícone de flor para login
 import Snowfall from 'react-snowfall'; // Importa o componente Snowfall
 import { useNavigate } from 'react-router-dom'; // Hook para navegação
-import "../login-style.css"; // Seu arquivo de estilo CSS
+import { loginUser } from "../api/api_connection.js";
+import "../styles/login-style.css"; // Seu arquivo de estilo CSS
+import "../api/api_connection.js";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [audio, setAudio] = useState(null); // Armazena a referência do áudio
   const [audioPlayed, setAudioPlayed] = useState(false); // Controla se o áudio já foi tocado
   const navigate = useNavigate(); // Instanciando o useNavigate
 
   // Função para lidar com o login (sem validação)
-  const handleLogin = () => {
-    // Simula um login sem validação
-    navigate('/goals'); // Redireciona para a página de Goals imediatamente
+  const handleLogin = async () => {
+
+    setError(""); // Reseta o erro antes da requisição
+
+    try {
+      const data = await loginUser(username, password);
+      console.log("Login bem-sucedido:", data);
+      localStorage.setItem("username", username);
+
+      // Redireciona para a página de metas
+      navigate("/goals");
+    } catch (error) {
+      console.log("Erro ao fazer login:", error);
+      setError(error.message);
+    }
+
   };
 
   // Função para lidar com a reprodução do áudio após interação do usuário
@@ -64,34 +82,47 @@ const Login = () => {
       <Snowfall />
 
       <div className="login-box">
-        <h2>Welcome to <span className="highlighted-text">cutecode</span>!</h2>
-        <p className="subheading">Login in to your account to continue</p>
 
-        <div className="input-group">
-          <input
-            type="text"
-            placeholder="Username"
-            className="input-field"
-            onFocus={playAudio} // Reproduz o áudio quando o input de texto recebe o foco
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="input-field"
-            onFocus={playAudio} // Reproduz o áudio quando o input de senha recebe o foco
-          />
+        {/* Parte superior com imagem */}
+        <div className="login-box-top">
+          <img src="background.jpg" alt="Login Illustration" className="login-image" />
         </div>
 
-        <div className="button-group">
-          {/* Botão de Login com ícone de flor */}
-          <button className="login-button" onClick={handleLogin}>
-            <LuFlower className="icon" /> Login
-          </button>
+        {/* Parte inferior com título, inputs e botões */}
+        <div className="login-box-bottom">
+          <h2>Welcome to <span className="highlighted-text">CoinCutie</span>!</h2>
+          <p className="subheading">Login in to your account to continue</p>
 
-          {/* Botão de Registro com ícone de semente */}
-          <button className="signup-button">
-            <FaSeedling className="icon" /> Register
-          </button>
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Username"
+              className="input-field"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              onFocus={playAudio} // Reproduz o áudio quando o input de texto recebe o foco
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="input-field"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onFocus={playAudio} // Reproduz o áudio quando o input de senha recebe o foco
+            />
+          </div>
+
+          <div className="button-group">
+            {/* Botão de Login com ícone de flor */}
+            <button className="login-button" onClick={handleLogin}>
+              <LuFlower className="icon" /> Login
+            </button>
+
+            {/* Botão de Registro com ícone de semente */}
+            <button className="signup-button">
+              <FaSeedling className="icon" /> Register
+            </button>
+          </div>
         </div>
       </div>
     </div>
