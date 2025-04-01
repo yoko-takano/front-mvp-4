@@ -8,3 +8,8 @@ services:
     volumes:
       - ./public:/usr/share/nginx/html/public
     restart: always
+
+networks:
+  app-network:
+    external: true
+    
