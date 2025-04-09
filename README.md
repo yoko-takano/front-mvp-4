@@ -1,4 +1,4 @@
-# 🌱 Frontend - Aplicação de Metas Financeiras
+# 🌱 Frontend [Componente Extra]
 
 Este é o frontend de uma aplicação de controle de metas financeiras. O projeto permite criar, visualizar, atualizar e excluir objetivos financeiros, além de definir salário mensal e acompanhar quanto falta para atingir cada meta.
 
