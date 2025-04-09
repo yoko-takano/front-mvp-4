@@ -1,4 +1,4 @@
-const API_URL = "http://172.22.0.2:5000"; // URL da API
+const API_URL = "http://localhost:5001"; // URL da API
 
 export const loginUser = async (username, password) => {
 
